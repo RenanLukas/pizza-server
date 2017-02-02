@@ -2,23 +2,26 @@
 
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'json'
 
 current_dir = Dir.pwd
 Dir["#{current_dir}/model/*.rb"].each { |file| require file }
 
+use Rack::PostBodyContentTypeParser
 	get '/pizzas' do
-	  @pizzas = Pizza.all
+	  @pizzas = Pizza.all.to_json
 	end
 
 	get '/pizzas/:id' do
 	  @pizza = Pizza.find(params[:id])
 	end
 
-	post '/pizza' do
+	post '/pizzas' do
+		binding.pry
 	  @pizza = Pizza.create(params[:pizza])
 	end
 
-	put '/pizzas/:id/save' do
+	put '/pizzas/:id' do
 	  @pizza = Pizza.find(params[:id])
 	  @pizza.save!
 	end

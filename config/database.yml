@@ -1,15 +1,13 @@
 production:
   adapter: postgresql
   encoding: unicode
-  database: app_development
+  database: database
   pool: 2
-  username: pizza_user
-  password: pizza_pw
+  username: username
+  password: password
 
 development:
   adapter: postgresql
   encoding: unicode
   database: app_development
   pool: 2
-  username: pizza_user
-  password: pizza_pw
