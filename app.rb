@@ -4,8 +4,8 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require './environments'
 
-get '/frank-says' do
-      'Put this in your pipe & smoke it!'
+get '/test' do
+      'Hello world!'
 
 class Post < ActiveRecord::Base
 end
