@@ -1,5 +1,15 @@
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: app_development
+  pool: 2
+  username: pizza_user
+  password: pizza_pw
+
 development:
   adapter: postgresql
-  host: localhost
-  username: user
-  database: app-dev
+  encoding: unicode
+  database: app_development
+  pool: 2
+  username: pizza_user
+  password: pizza_pw
